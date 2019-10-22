@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/OpenField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/OpenField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Wall.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +64,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -71,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571749726313</updated>
       <workItem from="1571749729349" duration="1954000" />
-      <workItem from="1571766146621" duration="2399000" />
+      <workItem from="1571766146621" duration="3964000" />
     </task>
     <servers />
   </component>
