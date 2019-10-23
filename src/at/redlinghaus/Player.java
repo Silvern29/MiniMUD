@@ -1,5 +1,6 @@
 package at.redlinghaus;
 
+import java.io.File;
 import java.util.List;
 
 public class Player {
@@ -7,6 +8,11 @@ public class Player {
     private List<Quest> questList;
     private List<PackItem> backPack;
     private Field currField;
+
+    public Player(String name, Field currField) {
+        this.name = name;
+        this.currField = currField;
+    }
 
     public void move(String direction) {
         switch (direction.toLowerCase()) {

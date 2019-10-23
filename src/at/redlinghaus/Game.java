@@ -16,4 +16,20 @@ public class Game {
         System.out.println(field3);
         System.out.println(field4);
     }
+
+    public void playGame () {
+
+        Player player = new Player("Dummy", field1);
+        Quest1 quest1 = new Quest1();
+        quest1.solveQuest();
+
+    }
+
+
+
+
+
+
+
+
 }
