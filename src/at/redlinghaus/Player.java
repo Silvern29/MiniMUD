@@ -1,13 +1,14 @@
 package at.redlinghaus;
 
-import java.io.File;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Player {
     private String name;
-    private List<Quest> questList;
-    private List<PackItem> backPack;
+    private LinkedList<Quest> questList = new LinkedList<>();
+    private LinkedList<PackItem> backPack = new LinkedList<>();
     private Field currField;
+
 
     public Player(String name, Field currField) {
         this.name = name;
@@ -49,20 +50,42 @@ public class Player {
         this.name = name;
     }
 
-    public List<Quest> getQuestList() {
+    public LinkedList<Quest> getQuestList() {
         return questList;
     }
 
-    public void setQuestList(List<Quest> questList) {
-        this.questList = questList;
+    public void addQuestList(Quest quest) {
+        this.questList.add(quest);
     }
 
-    public List<PackItem> getBackPack() {
+    public void removeQuestList(Quest quest) {
+        this.questList.remove(quest);
+    }
+
+    public LinkedList<PackItem> getBackPack() {
         return backPack;
     }
 
-    public void setBackPack(List<PackItem> backPack) {
-        this.backPack = backPack;
+    public PackItem isInPack(Item item) {
+        for(PackItem el : backPack) {
+            if (el.getPackedItem() == item) {
+                return el;
+            }
+        }
+        return null;
+    }
+
+    public void addBackPack(Item item, int amount) {
+        PackItem tmp = isInPack(item);
+        if (tmp != null) {
+            tmp.setAmount(tmp.getAmount() + amount);
+        } else {
+            this.backPack.add(new PackItem(item, amount));
+        }
+    }
+
+    public void removeBackPack (PackItem item) {
+        this.backPack.remove(item);
     }
 
     public Field getCurrField() {

@@ -19,8 +19,10 @@ public class Game {
 
     public void playGame () {
 
-        Player player = new Player("Dummy", field1);
-        Quest1 quest1 = new Quest1();
+
+        Player player1 = new Player("Dummy", field1);
+        Quest1 quest1 = new Quest1(player1);
+        field4.addInteractions(Quest1);
         quest1.solveQuest();
 
     }
