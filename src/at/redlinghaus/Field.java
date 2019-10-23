@@ -34,7 +34,7 @@ public class Field extends Element {
         return interactions;
     }
 
-    public void setInteractions(Interaction interaction) {
+    public void addInteractions(Interaction interaction) {
         this.interactions.add(interaction);
     }
 

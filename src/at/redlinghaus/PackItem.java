@@ -4,6 +4,11 @@ public class PackItem {
     private Item packedItem;
     private int amount;
 
+    public PackItem(Item packedItem, int amount) {
+        this.packedItem = packedItem;
+        this.amount = amount;
+    }
+
     public Item getPackedItem() {
         return packedItem;
     }
