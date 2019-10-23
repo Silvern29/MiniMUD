@@ -2,14 +2,14 @@ package at.redlinghaus;
 
 abstract public class Quest extends Interaction {
 
-    private boolean isSolved;
-    private Goal goal;
-    private Item reward;
+    protected boolean isSolved;
+    protected Goal goal;
+    protected Item reward;
 
-
-    public Quest(String description, Item reward, boolean isSolved) {
-        super(description);
-        this.reward = reward;
-        this.isSolved = false;
+    public void setSolved(boolean solved) {
+        isSolved = solved;
     }
+
+    abstract public void accept();
+
 }

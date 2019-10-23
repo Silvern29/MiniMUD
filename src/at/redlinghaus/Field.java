@@ -1,9 +1,10 @@
 package at.redlinghaus;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Field extends Element {
-    private List interactions;
+    private LinkedList<Interaction> interactions = new LinkedList<>();
     public static int nextFieldNum = 1;
     private int fieldNum;
     private String description;
@@ -28,12 +29,12 @@ public class Field extends Element {
         this.description = description;
     }
 
-    public List getInteractions() {
+    public List<Interaction> getInteractions() {
         return interactions;
     }
 
-    public void setInteractions(List interactions) {
-        this.interactions = interactions;
+    public void setInteractions(Interaction interaction) {
+        this.interactions.add(interaction);
     }
 
     public int getFieldNum() {
