@@ -2,13 +2,8 @@ package at.redlinghaus;
 
 public class Wall extends Element{
 
-
-    public Wall(Element north, Element east, Element south, Element west) {
-        super(north, east, south, west);
-    }
-
     @Override
     public void enter(Player p) {
-        System.out.println("Ouch! This is a wall!");;
+        System.out.println("Ouch! This is a wall!");
     }
 }

@@ -1,7 +1,7 @@
 package at.redlinghaus;
 
 abstract public class Element {
-    protected Element north, east, south, west;
+    Element north, east, south, west;
 
     public Element(){
     }
@@ -26,18 +26,16 @@ abstract public class Element {
     }
 
     public void connect() {
-        if (firstNotNull().equals(null)) {
-
-
-        }
-        if (firstNotNull().equals(north)) {
-            this.west = north.east.south;
-        } else if (firstNotNull().equals(east)) {
-            this.south = east.south.west;
-        } else if (firstNotNull().equals(south)) {
-            this.east = south.west.north;
-        } else if (firstNotNull().equals(west)) {
-            this.north = west.north.east;
+        if (firstNotNull() != null) {
+            if (firstNotNull() == north) {
+                this.east = north.east.south;
+            } else if (firstNotNull() == east) {
+                this.south = east.south.west;
+            } else if (firstNotNull() == south) {
+                this.west = south.west.north;
+            } else if (firstNotNull() == west) {
+                this.north = west.north.east;
+            }
         }
     }
 
@@ -48,7 +46,7 @@ abstract public class Element {
 
     public void addEast(Element east){
         this.east = east;
-        east.west = this;
+        east.setWest(this);
     }
 
     public void addSouth(Element south){
@@ -94,4 +92,14 @@ abstract public class Element {
     public void setWest(Element west) {
         this.west = west;
     }
+
+    public int getFieldNum() {
+        return 0;
+    }
+
+    public String getDescription() {
+        return "";
+    }
+
+
 }

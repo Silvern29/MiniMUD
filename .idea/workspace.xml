@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="edit Quest">
+    <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/PackItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/PackItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Wall.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +42,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">

@@ -1,29 +1,86 @@
 package at.redlinghaus;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Game {
+    List<Element> listOfElments = new LinkedList<>();
+
+    Field field1;
+    Field field2;
+    Field field3;
+    Field field4;
+    Wall wall1;
+    Wall wall2;
+    Wall wall3;
+    Wall wall4;
+    Wall wall5;
+    Wall wall6;
+    Wall wall7;
+    Wall wall8;
+
+    public Game(){
+        field1 = createField("Start");
+        field2 = createField("Start");
+        field3 = createField("Start");
+        field4 = createField("Start");
+        wall1 = createWall();
+        wall2 = createWall();
+        wall3 = createWall();
+        wall4 = createWall();
+        wall5 = createWall();
+        wall6 = createWall();
+        wall7 = createWall();
+        wall8 = createWall();
+        connectAll();
+
+    }
+
+    public Field createField(String description) {
+        Field tmp = new Field(description);
+        listOfElments.add(tmp);
+        return tmp;
+    }
+
+    public Wall createWall() {
+        Wall tmp = new Wall();
+        listOfElments.add(tmp);
+        return tmp;
+    }
+
+    public void connectAll(){
+        for(Element el : listOfElments) {
+            el.connect();
+        }
+    }
+
     private void createStart(){
-        Field field4 = new Field("Start");
-        Field field3 = new Field("Start");
-        Field field2 = new Field("Start");
-        Field field1 = new Field("Start");
+        field1.addEast(field2);
+        field2.addEast(field3);
+        field3.addEast(field4);
+        field1.addNorth(wall1);
+        wall1.addEast(wall2);
+        wall2.addEast(wall3);
+        wall3.addEast(wall4);
+        field1.addSouth(wall5);
+        wall5.addEast(wall6);
+        wall6.addEast(wall7);
+        wall7.addEast(wall8);
     }
     public void createDungeon(){
+        createStart();
 
-
-
-        System.out.println(field1);
-        System.out.println(field2);
-        System.out.println(field3);
-        System.out.println(field4);
     }
 
     public void playGame () {
-
-
+        createDungeon();
+        Printer myPrint = new Printer();
         Player player1 = new Player("Dummy", field1);
+        myPrint.printCurrField(player1);
         Quest1 quest1 = new Quest1(player1);
-        field4.addInteractions(Quest1);
+//        field4.addInteractions(quest1);
         quest1.solveQuest();
+        myPrint.printElements(this);
 
     }
 
