@@ -2,10 +2,10 @@ package at.redlinghaus;
 
 public class Game {
     private void createStart(){
-        Field field1 = new Field("Start");
-        Field field2 = new Field("Start");
-        Field field3 = new Field("Start");
         Field field4 = new Field("Start");
+        Field field3 = new Field("Start");
+        Field field2 = new Field("Start");
+        Field field1 = new Field("Start");
     }
     public void createDungeon(){
 

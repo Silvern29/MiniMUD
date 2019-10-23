@@ -20,12 +20,16 @@ abstract public class Element {
             return east;
         } else if(this.south != null){
             return south;
-        } else {
+        } else if (this.west != null){
             return west;
-        }
+        } return null;
     }
 
     public void connect() {
+        if (firstNotNull().equals(null)) {
+
+
+        }
         if (firstNotNull().equals(north)) {
             this.west = north.east.south;
         } else if (firstNotNull().equals(east)) {
