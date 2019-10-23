@@ -13,6 +13,41 @@ abstract public class Element {
         this.west = west;
     }
 
+    public boolean checkNorth(){
+        return this.north != null;
+    }
+
+    public void connectNorth(){
+        if (this.east != null) {
+            if (east.getNorth() != null) {
+
+            }
+
+        }
+    }
+
+    public void addNorth(Element north){
+        this.north = north;
+        north.south = this;
+    }
+
+    public void addEast(Element east){
+        this.east = east;
+        east.west = this;
+    }
+
+    public void addSouth(Element south){
+        this.south = south;
+        south.north = this;
+    }
+
+    public void addWest(Element west){
+        this.west = west;
+        west.east = this;
+    }
+
+    abstract public Field enter();
+
     public Element getNorth() {
         return north;
     }
@@ -44,26 +79,4 @@ abstract public class Element {
     public void setWest(Element west) {
         this.west = west;
     }
-
-    public void addNorth(Element north){
-        this.north = north;
-        north.south = this;
-    }
-
-    public void addEast(Element east){
-        this.east = east;
-        east.west = this;
-    }
-
-    public void addSouth(Element south){
-        this.south = south;
-        south.north = this;
-    }
-
-    public void addWest(Element west){
-        this.west = west;
-        west.east = this;
-    }
-
-    abstract public Field enter();
 }

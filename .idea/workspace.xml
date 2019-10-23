@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/OpenField.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
