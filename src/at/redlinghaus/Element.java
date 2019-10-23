@@ -13,16 +13,27 @@ abstract public class Element {
         this.west = west;
     }
 
-    public boolean checkNorth(){
-        return this.north != null;
+    public Element firstNotNull(){
+        if (this.north != null){
+            return north;
+        } else if(this.east != null){
+            return east;
+        } else if(this.south != null){
+            return south;
+        } else {
+            return west;
+        }
     }
 
-    public void connectNorth(){
-        if (this.east != null) {
-            if (east.getNorth() != null) {
-
-            }
-
+    public void connect() {
+        if (firstNotNull().equals(north)) {
+            this.west = north.east.south;
+        } else if (firstNotNull().equals(east)) {
+            this.south = east.south.west;
+        } else if (firstNotNull().equals(south)) {
+            this.east = south.west.north;
+        } else if (firstNotNull().equals(west)) {
+            this.north = west.north.east;
         }
     }
 
@@ -46,7 +57,7 @@ abstract public class Element {
         west.east = this;
     }
 
-    abstract public Field enter();
+    abstract public void enter(Player p );
 
     public Element getNorth() {
         return north;

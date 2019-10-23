@@ -12,6 +12,7 @@ public class Field extends Element {
         super();
         this.description = description;
         fieldNum = nextFieldNum++;
+        this.connect();
     }
 
     public Field(String description, Element north, Element east, Element south, Element west) {
@@ -45,7 +46,20 @@ public class Field extends Element {
     }
 
     @Override
-    public Field enter() {
-        return this;
+    public void enter(Player p) {
+        p.setCurrField(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Field{" +
+                "interactions=" + interactions +
+                ", fieldNum=" + fieldNum +
+                ", description='" + description + '\'' +
+                ", north=" + north +
+                ", east=" + east +
+                ", south=" + south +
+                ", west=" + west +
+                '}';
     }
 }

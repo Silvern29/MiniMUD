@@ -11,16 +11,16 @@ public class Player {
     public void move(String direction) {
         switch (direction.toLowerCase()) {
             case "north":
-                currField.north.enter();
+                currField.north.enter(this);
                 break;
             case "east":
-                currField.east.enter();
+                currField.east.enter(this);
                 break;
             case "south":
-                currField.south.enter();
+                currField.south.enter(this);
                 break;
             case "west":
-                currField.west.enter();
+                currField.west.enter(this);
                 break;
             default:
                 System.out.println("Please try again");
