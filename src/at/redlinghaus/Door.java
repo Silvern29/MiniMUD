@@ -1,6 +1,6 @@
 package at.redlinghaus;
 
-public class Door extends Field {
+public class Door extends Element {
     private boolean isOpen;
 
     public Door(Element north, Element east, Element south, Element west) {

@@ -1,9 +1,9 @@
 package at.redlinghaus;
 
-public class Quest extends Interaction {
+abstract public class Quest extends Interaction {
 
     private boolean isSolved;
-    private String goal;
+    private Goal goal;
     private Item reward;
 
 
