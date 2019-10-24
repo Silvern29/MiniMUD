@@ -1,8 +1,8 @@
 package at.redlinghaus;
 
-public class Stone extends Item {
+public class QuestItem extends Item {
 
-    public Stone(String description) {
+    public QuestItem(String description) {
         super(description);
     }
 
