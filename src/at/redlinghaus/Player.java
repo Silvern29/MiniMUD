@@ -1,7 +1,6 @@
 package at.redlinghaus;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class Player {
     private String name;
@@ -38,8 +37,9 @@ public class Player {
 
     }
 
-    public void acceptQuest() {
-
+    public void acceptQuest(Quest1 quest) {
+        this.addQuestList(quest);
+        if (quest.getGoalQ1() ==)
     }
 
     public String getName() {

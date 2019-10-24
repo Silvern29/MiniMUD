@@ -9,13 +9,13 @@ public class Door extends Element {
 
     public Field nextField(Field currField){
         if(currField.equals(north)){
-            return (Field) south;
-        } else if(currField.equals(east)){
-            return (Field) west;
-        } else if(currField.equals(south)){
-            return (Field) north;
-        } else {
-            return (Field) east;
+                return (Field) south;
+            } else if(currField.equals(east)){
+                return (Field) west;
+            } else if(currField.equals(south)){
+                return (Field) north;
+            } else {
+                return (Field) east;
         }
     }
 
