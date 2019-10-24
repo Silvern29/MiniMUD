@@ -19,32 +19,38 @@ public class Quest1 extends Quest {
     }
 
     @Override
-    public void accept() {
-        if (player.getCurrField() ==) {
-            String inputPlayer = sc.nextLine();
-            System.out.println("Do you want to accept this quest?\ny/n");
-            switch (inputPlayer.toLowerCase()) {
-                case "y":
-                    player.acceptQuest(this);
-                    System.out.println("");
-                    for (int triesLeft = 2; triesLeft > -1; triesLeft--) {
-                        if (sc.nextLine().equalsIgnoreCase(goalQ1.getAnswerString())) {
-                            System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + key.getDescription() + ".");
-                            setSolved(true);
-                            player.addBackPack(key, 1);
-                        } else {
-                            System.out.println("Wrong answer. You have " + triesLeft + " left.");
-                        }
-                    }
-                    break;
-                case "n":
-
-
-
-            }
-
+    public void acceptQuest() {
+        String inputPlayer = sc.nextLine();
+        System.out.println("Do you want to accept this quest?\ny/n");
+        switch (inputPlayer.toLowerCase()) {
+            case "y":
+                player.acceptQuest(this);
+                System.out.println("You have accepted this quest. Enter your guess below.");
+                this.solveQuest();
+                break;
+            case "n":
+                System.out.println("You have denied the quest.");
+                break;
+            default:
+                System.out.println("Invalid answer.");
         }
+    }
 
+    public void solveQuest() {
+        for (int triesLeft = 2; triesLeft > -1; triesLeft--) {
+            if (sc.nextLine().equalsIgnoreCase(goalQ1.getAnswerString())) {
+                System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + key.getDescription() + ".");
+                setSolved(true);
+                player.addBackPack(key, 1);
+            } else {
+                System.out.println("Wrong answer. You have " + triesLeft + " left.");
+            }
+        }
+    }
+
+    @Override
+    public boolean isComplete() {
+        return true;
     }
 
     @Override
@@ -61,19 +67,4 @@ public class Quest1 extends Quest {
                 '}';
     }
 
-    public void solveQuest() {
-        for (int triesLeft = 2; triesLeft > -1; triesLeft--) {
-            if (sc.nextLine().equalsIgnoreCase(goalQ1.getAnswerString())) {
-                System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + key.getDescription() + ".");
-                setSolved(true);
-                player.addBackPack(key, 1);
-            } else {
-                System.out.println("Wrong answer. You have " + triesLeft + " left.");
-            }
-        }
-    }
-
-    public PuzzleGoal getGoalQ1() {
-        return goalQ1;
-    }
 }

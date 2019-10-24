@@ -16,7 +16,6 @@ public class Game {
         myPrint.printCurrField(player1);
         Interaction quest1 = new Quest1(player1);
         dung.field4.addInteractions(quest1);
-        quest1.solveQuest();
         myPrint.printElements();
 
     }

@@ -34,12 +34,10 @@ public class Player {
     }
 
     public void use() {
-
     }
 
-    public void acceptQuest(Quest1 quest) {
-        this.addQuestList(quest);
-        if (quest.getGoalQ1() ==)
+    public void acceptQuest(Quest quest) {
+        addQuestList(quest);
     }
 
     public String getName() {
@@ -52,6 +50,16 @@ public class Player {
 
     public LinkedList<Quest> getQuestList() {
         return questList;
+    }
+
+    public boolean isInQuestList(Quest quest) {
+        boolean existing = false;
+        for (Quest quest1 : getQuestList()) {
+            if (quest1 == quest) {
+                existing = true;
+            }
+        }
+        return existing;
     }
 
     public void addQuestList(Quest quest) {
@@ -75,18 +83,32 @@ public class Player {
         return null;
     }
 
-    public void addBackPack(Item item, int amount) {
+    public PackItem addBackPack(Item item, int amount) {
         PackItem tmp = isInPack(item);
         if (tmp != null) {
             tmp.setAmount(tmp.getAmount() + amount);
         } else {
-            this.backPack.add(new PackItem(item, amount));
+            tmp = new PackItem(item, amount);
+            this.backPack.add(tmp);
+        }
+        return tmp;
+    }
+
+
+/*    public void removeBackPack (PackItem item) {
+        this.backPack.remove(item);
+    }*/
+
+    public void removeBackPack (Item item, int amount) {
+        PackItem tmp = isInPack(item);
+        if (tmp != null && tmp.getAmount() > amount) {
+            tmp.setAmount(tmp.getAmount() - amount);
+        } else if (tmp != null && tmp.getAmount() == amount) {
+            tmp.setAmount(0);
+            this.backPack.remove(tmp);
         }
     }
 
-    public void removeBackPack (PackItem item) {
-        this.backPack.remove(item);
-    }
 
     public Field getCurrField() {
         return currField;

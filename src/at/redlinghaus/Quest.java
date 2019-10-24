@@ -8,6 +8,17 @@ abstract public class Quest extends Interaction {
 
     abstract public void setSolved(boolean isSolved);
 
-    abstract public void accept();
+    public boolean isSolved() {
+        return isSolved;
+    }
 
+    abstract public void acceptQuest();
+
+    abstract public void solveQuest();
+
+    abstract public boolean isComplete();
+
+    public Goal getGoal() {
+        return goal;
+    }
 }

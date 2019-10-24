@@ -24,4 +24,5 @@ public class PackItem {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
 }
