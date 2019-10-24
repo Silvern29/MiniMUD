@@ -32,5 +32,4 @@ abstract public class Quest extends Interaction {
             }
         }
     }
-
 }

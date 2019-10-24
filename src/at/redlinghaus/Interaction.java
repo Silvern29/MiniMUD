@@ -1,6 +1,6 @@
 package at.redlinghaus;
 
-public abstract class Interaction {
+abstract public class Interaction {
     protected String description;
 
     public Interaction(){}

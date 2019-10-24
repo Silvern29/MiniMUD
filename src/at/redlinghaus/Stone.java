@@ -6,4 +6,9 @@ public class Stone extends Item {
         super(description);
     }
 
+    @Override
+    void pickUpItem(Player p) {
+
+    }
+
 }

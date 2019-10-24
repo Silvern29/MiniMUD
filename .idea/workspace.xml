@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Consumable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Consumable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Stone.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +39,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -86,6 +86,8 @@
       <updated>1571749726313</updated>
       <workItem from="1571749729349" duration="1954000" />
       <workItem from="1571766146621" duration="3964000" />
+      <workItem from="1571926267016" duration="2586000" />
+      <workItem from="1571939767326" duration="1211000" />
     </task>
     <task id="LOCAL-00001" summary="edit Quest">
       <created>1571835615723</created>
