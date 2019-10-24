@@ -20,7 +20,7 @@ public class Door extends Element {
     }
 
     public Door(Element north, Element east, Element south, Element west) {
-        super(north, east, south, west);
+//        super(north, east, south, west);
     }
 
     public boolean isOpen() {

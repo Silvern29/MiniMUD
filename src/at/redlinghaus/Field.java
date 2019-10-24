@@ -4,24 +4,18 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Field extends Element {
-    private LinkedList<Interaction> interactions = new LinkedList<>();
+    private List<Interaction> interactions = new LinkedList<>();
     public static int nextFieldNum = 1;
     private int fieldNum;
     private String description;
 
     public Field(String description) {
-        super();
         this.description = description;
         fieldNum = nextFieldNum++;
         this.connect();
     }
 
-    public Field(String description, Element north, Element east, Element south, Element west) {
-        super(north, east, south, west);
-        this.description = description;
-        fieldNum = nextFieldNum++;
-    }
-
+    @Override
     public String getDescription() {
         return description;
     }
@@ -38,6 +32,7 @@ public class Field extends Element {
         this.interactions.add(interaction);
     }
 
+    @Override
     public int getFieldNum() {
         return fieldNum;
     }
@@ -57,10 +52,6 @@ public class Field extends Element {
                 "interactions=" + interactions +
                 ", fieldNum=" + fieldNum +
                 ", description='" + description + '\'' +
-                ", north=" + north +
-                ", east=" + east +
-                ", south=" + south +
-                ", west=" + west +
                 '}';
     }
 }
