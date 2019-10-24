@@ -21,4 +21,16 @@ abstract public class Quest extends Interaction {
     public Goal getGoal() {
         return goal;
     }
+
+    @Override
+    public void handleInteraction(Player p) {
+        if (!p.isInQuestList(this)) {
+            this.acceptQuest();
+        } else if (p.isInQuestList(this) && !this.isSolved) {
+            if (this.isComplete()) {
+                this.solveQuest();
+            }
+        }
+    }
+
 }

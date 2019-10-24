@@ -26,7 +26,7 @@ public class Game {
     }
 
     public void setQuests(Player player){
-        Interaction quest1 = new Quest1(player);
+        Interaction quest1 = new Quest1(player); //create as Quest??
         dung.field4.addInteractions(quest1);
     }
 
