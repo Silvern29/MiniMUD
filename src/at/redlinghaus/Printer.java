@@ -1,6 +1,12 @@
 package at.redlinghaus;
 
 public class Printer {
+    Game game;
+
+    public Printer(Game game){
+        this.game = game;
+    }
+
     public void printCurrField(Player p){
         System.out.println("-------------------------------------------------------");
         System.out.printf("Field %d%n", p.getCurrField().getFieldNum());
@@ -23,8 +29,8 @@ public class Printer {
         System.out.printf("West: %s%n", el.getWest());
     }
 
-    public void printElements(Game game){
-        for(Element el : game.listOfElments){
+    public void printElements(){
+        for(Element el : game.dung.listOfElments){
             printField(el);
         }
     }
