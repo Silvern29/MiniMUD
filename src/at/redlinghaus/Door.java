@@ -2,16 +2,13 @@ package at.redlinghaus;
 
 public class Door extends Element {
     private boolean isOpen;
-    public String description;
+    private String description;
+    private Key key;
 
-    public Door(boolean isOpen){
+    public Door(boolean isOpen, Key key){
         super();
         this.isOpen = isOpen;
-    }
-
-    public Door(boolean isOpen, Element north, Element east, Element south, Element west) {
-        super(north, east, south, west);
-        this.isOpen = isOpen;
+        this.key = key;
     }
 
     @Override

@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Field extends Element {
-    private List<Interaction> interactions = new LinkedList<>();
     public static int nextFieldNum = 1;
     private int fieldNum;
     private String description;

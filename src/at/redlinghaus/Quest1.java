@@ -5,17 +5,15 @@ import java.util.Scanner;
 public class Quest1 extends Quest {
 
     private Player player;
-    private PuzzleGoal goalQ1 = new PuzzleGoal("coin");
-    private Key key = new Key("123");
     private Scanner sc = new Scanner(System.in);
 
     public Quest1(Player player) {
         this.player = player;
-        description = "This Door is locked. It requires a key, which is being kept in this box. " +
-                "To open the box you must solve the following riddle:\n\nWhat has a head and a tail, but on body?\n\n" +
+        description = "This door is locked. It requires a key, which is being kept in this box. " +
+                "To open the box you must solve the following riddle:\n\nWhat has a head and a tail, but no body?\n\n" +
                 "You have 3 tries.";
-        goal = goalQ1;
-        reward = key;
+        goal = new PuzzleGoal("coin");
+        reward = new Key("123");
     }
 
     @Override
@@ -37,11 +35,11 @@ public class Quest1 extends Quest {
     }
 
     public void solveQuest() {
-        for (int triesLeft = 2; triesLeft > -1; triesLeft--) {
-            if (sc.nextLine().equalsIgnoreCase(goalQ1.getAnswerString())) {
-                System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + key.getDescription() + ".");
+        for (int triesLeft = 3; triesLeft > 0; triesLeft--) {
+            if (sc.nextLine().equalsIgnoreCase(((PuzzleGoal) goal).getAnswerString())) {
+                System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + reward.getDescription() + ".");
                 setSolved(true);
-                player.addBackPack(key, 1);
+                player.addBackPack(reward, 1);
             } else {
                 System.out.println("Wrong answer. You have " + triesLeft + " left.");
             }
@@ -61,8 +59,8 @@ public class Quest1 extends Quest {
     @Override
     public String toString() {
         return "Quest1{" +
-                "goalQ1=" + goalQ1 +
-                ", key=" + key +
+                "goal=" + goal +
+                ", reward=" + reward +
                 ", isSolved=" + isSolved +
                 '}';
     }

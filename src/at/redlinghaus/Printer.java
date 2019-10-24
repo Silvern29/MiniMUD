@@ -9,7 +9,8 @@ public class Printer {
 
     public void printCurrField(Player p){
         System.out.println("-------------------------------------------------------");
-        System.out.printf("%s%n", callFieldDescription(p.getCurrField()));
+        System.out.printf("%s%n%n", callFieldDescription(p.getCurrField()));
+        System.out.printf("Quest/Items: %s%n%n", printInteractions(p.getCurrField()));
 
         System.out.printf("North: %s%n", callFieldDescription(p.getCurrField().getNorth()));
         System.out.printf("East: %s%n", callFieldDescription(p.getCurrField().getEast()));
@@ -31,6 +32,14 @@ public class Printer {
         for(Element el : game.dung.listOfElements){
             printField(el);
         }
+    }
+
+    public String printInteractions(Element el) {
+        String output = "";
+        for(Interaction i : el.getInteractions()) {
+            output += i.getDescription() + ", ";
+        }
+        return output;
     }
 
 //    private String callFieldDescription(Door el) {

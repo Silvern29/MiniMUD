@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Quest2 extends Quest {
 
     private Player player;
-    private Item stone = new Stone("an ordinary stone");
+    private Item stone = new Stone("an not so ordinary stone");
     private Key key = new Key("456");
     private Scanner sc = new Scanner(System.in);
 

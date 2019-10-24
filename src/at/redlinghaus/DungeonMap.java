@@ -15,7 +15,7 @@ public class DungeonMap {
     }
 
     public Door createDoor(boolean isOpen) {
-        Door tmp = new Door(isOpen);
+        Door tmp = new Door(isOpen, new Key("1234"));
         listOfElements.add(tmp);
         return tmp;
     }
@@ -27,12 +27,12 @@ public class DungeonMap {
     }
 
     public void createMap() {
-        field1 = createField("Start");
-        field2 = createField("Start");
-        field3 = createField("Start");
-        field4 = createField("Start");
-        field5 = createField("Start");
-        field6 = createField("Start");
+        field1 = createField("Entrance");
+        field2 = createField("Entrance");
+        field3 = createField("Entrance");
+        field4 = createField("Entrance");
+        field5 = createField("Entrance");
+        field6 = createField("Entrance");
         door1 = createDoor(false);
 
 

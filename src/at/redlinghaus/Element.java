@@ -1,8 +1,13 @@
 package at.redlinghaus;
 
+import java.util.LinkedList;
+import java.util.List;
+
 abstract public class Element {
     Element north, east, south, west;
     String description;
+    protected List<Interaction> interactions = new LinkedList<>();
+
 
     public Element(){
     }
@@ -132,5 +137,10 @@ abstract public class Element {
     public int getFieldNum() {
         return 0;
     }
+
+    public List<Interaction> getInteractions() {
+        return interactions;
+    }
+
 
 }
