@@ -54,13 +54,7 @@ public class Player {
     }
 
     public boolean isInQuestList(Quest quest) {
-        boolean existing = false;
-        for (Quest quest1 : getQuestList()) {
-            if (quest1 == quest) {
-                existing = true;
-            }
-        }
-        return existing;
+        return questList.contains(quest);
     }
 
     public void addQuestList(Quest quest) {
@@ -95,21 +89,14 @@ public class Player {
         return tmp;
     }
 
-
-/*    public void removeBackPack (PackItem item) {
-        this.backPack.remove(item);
-    }*/
-
     public void removeBackPack (Item item, int amount) {
         PackItem tmp = isInPack(item);
         if (tmp != null && tmp.getAmount() > amount) {
             tmp.setAmount(tmp.getAmount() - amount);
         } else if (tmp != null && tmp.getAmount() == amount) {
-            tmp.setAmount(0);
             this.backPack.remove(tmp);
         }
     }
-
 
     public Field getCurrField() {
         return (Field) currField;

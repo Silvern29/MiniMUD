@@ -43,12 +43,9 @@ public class Quest2 extends Quest {
         }
     }
 
+    @Override
     public boolean isComplete() {
-        boolean complete = false;
-        if (player.isInPack(stone).getAmount() >= goal.goalCount) {
-            complete = true;
-        }
-        return complete;
+        return player.isInPack(stone).getAmount() >= goal.goalCount;
     }
 
     public void solveQuest() {
