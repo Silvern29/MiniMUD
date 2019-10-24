@@ -11,11 +11,19 @@ public class Game {
     }
 
     public void playGame () {
-        Player player1 = new Player("Dummy", dung.field2);
-        Quest quest1 = new Quest1(player1);
-        dung.field4.addInteractions(quest1);
-//        quest1.solveQuest();
+        Player player1 = new Player("Dummy", dung.field1);
         myPrint.printCurrField(player1);
+        Interaction quest1 = new Quest1(player1);
+        dung.field4.addInteractions(quest1);
         myPrint.printElements();
+
     }
+
+
+
+
+
+
+
+
 }
