@@ -10,14 +10,20 @@ public class Field extends Element {
     private String description;
 
     public Field(String description) {
+        super();
         this.description = description;
         fieldNum = nextFieldNum++;
-        this.connect();
+    }
+
+    public Field(String description, Element north, Element east, Element south, Element west) {
+        super(north, east, south, west);
+        this.description = description;
+        fieldNum = nextFieldNum++;
     }
 
     @Override
     public String getDescription() {
-        return description;
+        return "Field " + fieldNum + ", " + description;
     }
 
     public void setDescription(String description) {
@@ -48,10 +54,6 @@ public class Field extends Element {
 
     @Override
     public String toString() {
-        return "Field{" +
-                "interactions=" + interactions +
-                ", fieldNum=" + fieldNum +
-                ", description='" + description + '\'' +
-                '}';
+        return "Field: " + fieldNum + ", " + description;
     }
 }

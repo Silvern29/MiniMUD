@@ -2,6 +2,7 @@ package at.redlinghaus;
 
 abstract public class Element {
     Element north, east, south, west;
+    String description;
 
     public Element(){
     }
@@ -25,7 +26,7 @@ abstract public class Element {
         } return null;
     }
 
-    public void connect() {
+    /*public void connect() {
         if (firstNotNull() != null) {
             if (firstNotNull() == north) {
                 this.east = north.east.south;
@@ -38,25 +39,60 @@ abstract public class Element {
             }
         }
     }
+*/
+    public String getDescription(){
+        return description;
+    }
+
+    public String getDescription(Element el){
+        return description;
+    }
+
+    public Element oppositeField(Element currField){
+        if(currField.equals(north)){
+            return south;
+        } else if(currField.equals(east)){
+            return west;
+        } else if(currField.equals(south)){
+            return north;
+        } else {
+            return east;
+        }
+    }
+
+    public void connect(Element north, Element east, Element south, Element west){
+        this.addNorth(north);
+        this.addEast(east);
+        this.addSouth(south);
+        this.addWest(west);
+    }
 
     public void addNorth(Element north){
         this.north = north;
-        north.south = this;
+        if (north != null){
+            north.south = this;
+        }
     }
 
     public void addEast(Element east){
         this.east = east;
-        east.setWest(this);
+        if (east != null){
+            east.setWest(this);
+        }
     }
 
     public void addSouth(Element south){
         this.south = south;
-        south.north = this;
+        if (south != null){
+            south.north = this;
+        }
     }
 
     public void addWest(Element west){
         this.west = west;
-        west.east = this;
+        if (west != null){
+            west.east = this;
+        }
     }
 
     abstract public void enter(Player p );
@@ -96,10 +132,5 @@ abstract public class Element {
     public int getFieldNum() {
         return 0;
     }
-
-    public String getDescription() {
-        return "";
-    }
-
 
 }

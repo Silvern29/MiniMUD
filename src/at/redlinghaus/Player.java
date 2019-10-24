@@ -6,7 +6,7 @@ public class Player {
     private String name;
     private LinkedList<Quest> questList = new LinkedList<>();
     private LinkedList<PackItem> backPack = new LinkedList<>();
-    private Field currField;
+    private Element currField;
 
 
     public Player(String name, Field currField) {
@@ -39,7 +39,7 @@ public class Player {
 
     public void acceptQuest(Quest1 quest) {
         this.addQuestList(quest);
-        if (quest.getGoalQ1() ==)
+//        if (quest.getGoalQ1() ==)
     }
 
     public String getName() {
@@ -89,10 +89,10 @@ public class Player {
     }
 
     public Field getCurrField() {
-        return currField;
+        return (Field) currField;
     }
 
-    public void setCurrField(Field currField) {
+    public void setCurrField(Element currField) {
         this.currField = currField;
     }
 }

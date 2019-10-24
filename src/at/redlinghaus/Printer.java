@@ -9,29 +9,43 @@ public class Printer {
 
     public void printCurrField(Player p){
         System.out.println("-------------------------------------------------------");
-        System.out.printf("Field %d%n", p.getCurrField().getFieldNum());
-        System.out.printf("Description: %s%n", p.getCurrField().getDescription());
+        System.out.printf("%s%n", callFieldDescription(p.getCurrField()));
 
-        System.out.printf("North: %s%n", p.getCurrField().getNorth());
-        System.out.printf("East: %s%n", p.getCurrField().getEast());
-        System.out.printf("South: %s%n", p.getCurrField().getSouth());
-        System.out.printf("West: %s%n", p.getCurrField().getWest());
+        System.out.printf("North: %s%n", callFieldDescription(p.getCurrField().getNorth()));
+        System.out.printf("East: %s%n", callFieldDescription(p.getCurrField().getEast()));
+        System.out.printf("South: %s%n", callFieldDescription(p.getCurrField().getSouth()));
+        System.out.printf("West: %s%n", callFieldDescription(p.getCurrField().getWest()));
     }
 
     public void printField(Element el){
         System.out.println("-------------------------------------------------------");
-        System.out.printf("Field %d%n", el.getFieldNum());
-        System.out.printf("Description: %s%n", el.getDescription());
+        System.out.printf("%s%n", callFieldDescription(el));
 
-        System.out.printf("North: %s%n", el.getNorth());
-        System.out.printf("East: %s%n", el.getEast());
-        System.out.printf("South: %s%n", el.getSouth());
-        System.out.printf("West: %s%n", el.getWest());
+        System.out.printf("North: %s%n", callFieldDescription(el.getNorth()));
+        System.out.printf("East: %s%n", callFieldDescription(el.getEast()));
+        System.out.printf("South: %s%n", callFieldDescription(el.getSouth()));
+        System.out.printf("West: %s%n", callFieldDescription(el.getWest()));
     }
 
     public void printElements(){
-        for(Element el : game.dung.listOfElments){
+        for(Element el : game.dung.listOfElements){
             printField(el);
+        }
+    }
+
+//    private String callFieldDescription(Door el) {
+//        if (el != null) {
+//            return el.getDescription(el);
+//        } else {
+//            return "Wall";
+//        }
+//    }
+
+    private String callFieldDescription(Element el) {
+        if (el != null) {
+            return el.getDescription();
+        } else {
+            return "Wall";
         }
     }
 }

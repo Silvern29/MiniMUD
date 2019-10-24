@@ -20,7 +20,7 @@ public class Quest1 extends Quest {
 
     @Override
     public void accept() {
-        if (player.getCurrField() ==) {
+//        if (player.getCurrField() ==) {
             String inputPlayer = sc.nextLine();
             System.out.println("Do you want to accept this quest?\ny/n");
             switch (inputPlayer.toLowerCase()) {
@@ -45,7 +45,7 @@ public class Quest1 extends Quest {
 
         }
 
-    }
+//    }
 
     @Override
     public void setSolved(boolean isSolved) {

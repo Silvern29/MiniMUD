@@ -2,26 +2,29 @@ package at.redlinghaus;
 
 public class Door extends Element {
     private boolean isOpen;
+    public String description;
 
     public Door(boolean isOpen){
+        super();
         this.isOpen = isOpen;
     }
 
-    public Field nextField(Field currField){
-        if(currField.equals(north)){
-                return (Field) south;
-            } else if(currField.equals(east)){
-                return (Field) west;
-            } else if(currField.equals(south)){
-                return (Field) north;
-            } else {
-                return (Field) east;
-        }
+    public Door(boolean isOpen, Element north, Element east, Element south, Element west) {
+        super(north, east, south, west);
+        this.isOpen = isOpen;
     }
 
-    public Door(Element north, Element east, Element south, Element west) {
-//        super(north, east, south, west);
+    @Override
+    public String getDescription(){
+        description = String.format("Door between field %d and field %d", oppositeField(firstNotNull()).getFieldNum(), firstNotNull().getFieldNum());
+        return description;
     }
+
+//    @Override
+//    public String getDescription(Element el){
+//        description = String.format("Door to field %d", oppositeField(el).getFieldNum());
+//        return description;
+//    }
 
     public boolean isOpen() {
         return isOpen;
@@ -33,6 +36,13 @@ public class Door extends Element {
 
     @Override
     public void enter(Player p) {
-        p.setCurrField(this.nextField(p.getCurrField()));
+        p.setCurrField(this.oppositeField(p.getCurrField()));
+    }
+
+    @Override
+    public String toString() {
+        return "Door to field " +
+                "isOpen=" + isOpen +
+                '}';
     }
 }
