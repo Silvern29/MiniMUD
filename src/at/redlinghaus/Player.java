@@ -67,7 +67,7 @@ public class Player {
     }
 
     public PackItem isInPack(Item item) {
-        for(PackItem el : backPack) {
+        for (PackItem el : backPack) {
             if (el.getPackedItem() == item) {
                 return el;
             }

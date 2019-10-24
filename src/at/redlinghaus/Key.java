@@ -4,6 +4,8 @@ public class Key extends Item {
 
 
     public Key(String description) {
-        super(description);
+        this.description = description;
     }
+
+
 }
