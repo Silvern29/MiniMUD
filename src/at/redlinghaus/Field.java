@@ -50,11 +50,9 @@ public class Field extends Element {
     @Override
     public void enter(Player p) {
         p.setCurrField(this);
-        for (Interaction el : interactions) {
-            if (el instanceof Quest) {
-                checkQuestStatus((Quest) el, p);
-            } else if (el instanceof Item) {
-                //bla
+        if (interactions.size() > 0) {
+            for (Interaction el : interactions) {
+                el.handleInteraction(p);
             }
         }
     }

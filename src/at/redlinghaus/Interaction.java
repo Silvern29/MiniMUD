@@ -12,4 +12,6 @@ public abstract class Interaction {
     public String getDescription() {
         return description;
     }
+
+    abstract public void handleInteraction (Player player);
 }

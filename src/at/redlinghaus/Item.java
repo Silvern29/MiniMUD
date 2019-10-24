@@ -7,4 +7,12 @@ public abstract class Item extends Interaction {
         super(description);
     }
 
+
+    abstract void pickUpItem (Player p);
+
+    @Override
+    public void handleInteraction(Player p) {
+
+    }
+
 }
