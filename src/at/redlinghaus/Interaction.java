@@ -13,5 +13,5 @@ abstract public class Interaction {
         return description;
     }
 
-    abstract public void handleInteraction (Player player);
+    abstract public void handleInteraction (Player player, Field field);
 }

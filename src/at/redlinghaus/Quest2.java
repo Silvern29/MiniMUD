@@ -22,24 +22,6 @@ public class Quest2 extends Quest {
 
     @Override
     public void acceptQuest() {
-        String inputPlayer = sc.nextLine();
-        System.out.println("Do you want to accept this quest?\ny/n");
-        switch (inputPlayer.toLowerCase()) {
-            case "y":
-                player.acceptQuest(this);
-                System.out.println("You have accepted this quest.");
-                if (isComplete()) {
-                    this.solveQuest();
-                } else {
-                    System.out.println("Please gather the required items and return.");
-                }
-                break;
-            case "n":
-                System.out.println("You have denied the quest.");
-                break;
-            default:
-                System.out.println("Invalid answer.");
-        }
     }
 
     @Override

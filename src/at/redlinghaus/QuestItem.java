@@ -6,9 +6,5 @@ public class QuestItem extends Item {
         super(description);
     }
 
-    @Override
-    void pickUpItem(Player p) {
-
-    }
 
 }

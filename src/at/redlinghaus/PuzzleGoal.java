@@ -4,8 +4,10 @@ public class PuzzleGoal extends Goal {
 
     private String answerString;
     private int answerInt;
+    private String task;
 
-    public PuzzleGoal (String answerString) {
+    public PuzzleGoal (String task, String answerString) {
+        this.task = task;
         this.answerString = answerString;
     }
 
@@ -20,4 +22,6 @@ public class PuzzleGoal extends Goal {
     public int getAnswerInt() {
         return answerInt;
     }
+
+
 }

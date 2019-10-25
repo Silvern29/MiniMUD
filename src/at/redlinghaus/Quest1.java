@@ -57,6 +57,10 @@ public class Quest1 extends Quest {
     }
 
     @Override
+    public void acceptQuest() {
+    }
+
+    @Override
     public String toString() {
         return "Quest1{" +
                 "goal=" + goal +
