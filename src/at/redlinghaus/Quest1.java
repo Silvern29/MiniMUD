@@ -16,7 +16,7 @@ public class Quest1 extends Quest {
     public void solveQuest() {
         for (int triesLeft = 3; triesLeft > 0; triesLeft--) {
             if (sc.nextLine().equalsIgnoreCase(((PuzzleGoal) goal).getAnswerString())) {
-                System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + reward.getDescription() + ".");
+                System.out.println("Congratulations. Your answer is correct. The box opens and you receive " + reward + ".");
                 setSolved(true);
                 p.addBackPack(reward, 1);
             } else {
@@ -37,11 +37,7 @@ public class Quest1 extends Quest {
 
     @Override
     public String toString() {
-        return "Quest1{" +
-                "goal=" + goal +
-                ", reward=" + reward +
-                ", isSolved=" + isSolved +
-                '}';
+        return "Quest: " + description;
     }
 
 }

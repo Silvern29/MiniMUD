@@ -13,8 +13,8 @@ public abstract class Item extends Interaction {
 
     @Override
     public void handleInteraction(Player p, Field field) {
+        System.out.printf("You found %s. Do you want to pick it up and add it to your backpack?\ny/n\n", this.description);
         String inputPlayer = sc.nextLine();
-        System.out.println("You found an Item. Do you want to pick it up and add it to your backpack?\ny/n\n" + this.description);
         switch (inputPlayer.toLowerCase()) {
             case "y":
                 p.addBackPack(this, 1);

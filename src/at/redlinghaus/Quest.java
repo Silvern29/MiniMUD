@@ -17,8 +17,8 @@ abstract public class Quest extends Interaction {
     }
 
     public void acceptQuest() {
+        System.out.println(this.description + "Do you want to accept this quest?\ny/n\n");
         String inputPlayer = sc.nextLine();
-        System.out.println("Do you want to accept this quest?\ny/n\n" + this.description);
         switch (inputPlayer.toLowerCase()) {
             case "y":
                 p.acceptQuest(this);
@@ -34,7 +34,6 @@ abstract public class Quest extends Interaction {
                 System.out.println("Invalid answer.");
         }
     }
-
 
     abstract public void solveQuest();
 

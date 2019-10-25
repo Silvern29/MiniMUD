@@ -6,7 +6,7 @@ public class Quest2 extends Quest {
 
     public Quest2(Player p, DungeonMap map) {
         this.p = p;
-        description = "## filler ##";
+        description = "Please gather the not so ordinary stone.";
         stone = map.stone;
         goal = new GatherGoal(p, stone, 1);
         reward = map.key2;

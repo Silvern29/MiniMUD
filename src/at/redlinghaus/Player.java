@@ -86,6 +86,7 @@ public class Player {
 
     public void acceptQuest(Quest quest) {
         addQuestList(quest);
+        quest.goal.goalItem = addBackPack(quest.getGoal().goalItem.getPackedItem(), 0);
     }
 
     public String getName() {

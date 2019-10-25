@@ -46,7 +46,11 @@ public class Game {
         if (input.equals("w") || input.equals("a") ||input.equals("s") ||input.equals("d")) {
             player.move(input);
         } else if (input.equals("b")) {
-            myPrint.printBackPack(player);
+            if (player.getBackPack().size() == 0) {
+                System.out.println("Your backpack is empty!");
+            } else {
+                myPrint.printBackPack(player);
+            }
         } else if (input.equals("k")) {
             myPrint.printQuests(player);
         } else if(input.equals("u")){
