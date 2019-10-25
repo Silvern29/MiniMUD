@@ -15,7 +15,38 @@ public class Player {
     }
 
     public void use(Item item, String direction){
-
+        switch (direction) {
+            case "w":
+                if (currField.north == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.north.enter(this, item);
+                }
+                break;
+            case "d":
+                if (currField.east == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.east.enter(this, item);
+                }
+                break;
+            case "s":
+                if (currField.south == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.south.enter(this, item);
+                }
+                break;
+            case "a":
+                if (currField.west == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.west.enter(this, item);
+                }
+                break;
+            default:
+                System.out.println("Please try again");
+        }
     }
 
     public void move(String direction) {
@@ -51,10 +82,6 @@ public class Player {
             default:
                 System.out.println("Please try again");
         }
-    }
-
-    public void use() {
-
     }
 
     public void acceptQuest(Quest quest) {

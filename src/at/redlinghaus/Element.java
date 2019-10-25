@@ -101,6 +101,7 @@ abstract public class Element {
     }
 
     abstract public void enter(Player p );
+    abstract public void enter(Player p, Item item);
 
     public Element getNorth() {
         return north;

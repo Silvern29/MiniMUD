@@ -56,6 +56,10 @@ public class Field extends Element {
         }
     }
 
+    @Override
+    public void enter(Player p, Item item) {
+    }
+
 
     @Override
     public String toString() {

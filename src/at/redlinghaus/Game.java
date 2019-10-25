@@ -50,19 +50,28 @@ public class Game {
         } else if (input.equals("k")) {
             myPrint.printQuests(player);
         } else if(input.equals("u")){
-            int index = -1;
             if (player.getBackPack().size() == 0) {
                 System.out.println("You do not have anything to use!");
             } else {
                 boolean validIndex = false;
+                boolean validDirection = false;
                 System.out.println("Please choose an item: ");
                 myPrint.printBackPack(player);
+
+                int index = -1;
                 while (!validIndex) {
                     index = sc.nextInt();
                     sc.nextLine();
                     validIndex = player.getBackPack().get(index) != null;
                 }
-                player.use();
+
+                String direction = "";
+                while (!validDirection) {
+                    direction = sc.nextLine();
+                    validDirection = direction == "w" || direction == "a" ||direction == "s" ||direction == "d";
+                }
+
+                player.use(player.getBackPack().get(index).getPackedItem(), direction);
             }
 
         } else if (input.equals("q")) {

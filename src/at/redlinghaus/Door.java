@@ -45,6 +45,19 @@ public class Door extends Element {
     }
 
     @Override
+    public void enter(Player p, Item item) {
+        if (isOpen){
+            System.out.println(">>> This door is already unlocked! <<<");
+        } else {
+            if (item == key) {
+                isOpen = true;
+            } else {
+                System.out.println("The key does not match. Find the right one!");
+            }
+        }
+    }
+
+    @Override
     public String toString() {
         return "Door to field " +
                 "isOpen=" + isOpen +
