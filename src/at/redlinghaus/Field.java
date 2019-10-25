@@ -51,20 +51,11 @@ public class Field extends Element {
         p.setCurrField(this);
         if (interactions.size() > 0) {
             for (Interaction el : interactions) {
-                el.handleInteraction(p);
+                el.handleInteraction(p, this);
             }
         }
     }
 
-    public void checkQuestStatus (Quest quest, Player p) {
-        if (!p.isInQuestList(quest)) {
-            quest.acceptQuest();
-        } else if (p.isInQuestList(quest) && !quest.isSolved) {
-            if (quest.isComplete()) {
-                quest.solveQuest();
-            }
-        }
-    }
 
     @Override
     public String toString() {

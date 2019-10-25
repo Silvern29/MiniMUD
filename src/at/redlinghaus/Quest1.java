@@ -12,26 +12,8 @@ public class Quest1 extends Quest {
         description = "This door is locked. It requires a key, which is being kept in this box. " +
                 "To open the box you must solve the following riddle:\n\nWhat has a head and a tail, but no body?\n\n" +
                 "You have 3 tries.";
-        goal = new PuzzleGoal("coin");
+        goal = new PuzzleGoal("Enter your guess below.", "coin");
         reward = new Key("123");
-    }
-
-    @Override
-    public void acceptQuest() {
-        String inputPlayer = sc.nextLine();
-        System.out.println("Do you want to accept this quest?\ny/n");
-        switch (inputPlayer.toLowerCase()) {
-            case "y":
-                player.acceptQuest(this);
-                System.out.println("You have accepted this quest. Enter your guess below.");
-                this.solveQuest();
-                break;
-            case "n":
-                System.out.println("You have denied the quest.");
-                break;
-            default:
-                System.out.println("Invalid answer.");
-        }
     }
 
     public void solveQuest() {
@@ -54,6 +36,10 @@ public class Quest1 extends Quest {
     @Override
     public void setSolved(boolean isSolved) {
         this.isSolved = true;
+    }
+
+    @Override
+    public void acceptQuest() {
     }
 
     @Override

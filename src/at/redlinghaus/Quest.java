@@ -1,10 +1,14 @@
 package at.redlinghaus;
 
+import java.util.Scanner;
+
 abstract public class Quest extends Interaction {
 
     protected boolean isSolved;
     protected Goal goal;
     protected Item reward;
+    protected Scanner sc = new Scanner(System.in);
+    protected Player p;
 
     abstract public void setSolved(boolean isSolved);
 
@@ -12,7 +16,26 @@ abstract public class Quest extends Interaction {
         return isSolved;
     }
 
-    abstract public void acceptQuest();
+    abstract public void acceptQuest(); {
+        String inputPlayer = sc.nextLine();
+        System.out.println("Do you want to accept this quest?\ny/n\n" + this.description);
+        switch (inputPlayer.toLowerCase()) {
+            case "y":
+                p.acceptQuest(this);
+                System.out.println("You have accepted this quest.");
+                System.out.println(this.goal.getTask());
+                if (isComplete()) {
+                    this.solveQuest();
+                }
+                break;
+            case "n":
+                System.out.println("You have denied the quest.");
+                break;
+            default:
+                System.out.println("Invalid answer.");
+        }
+    }
+
 
     abstract public void solveQuest();
 
@@ -23,7 +46,7 @@ abstract public class Quest extends Interaction {
     }
 
     @Override
-    public void handleInteraction(Player p) {
+    public void handleInteraction(Player p, Field field) {
         if (!p.isInQuestList(this)) {
             this.acceptQuest();
         } else if (p.isInQuestList(this) && !this.isSolved) {
