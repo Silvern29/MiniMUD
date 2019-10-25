@@ -2,7 +2,6 @@ package at.redlinghaus;
 
 public class GatherGoal extends Goal {
 
-    private int goalCount;
     private PackItem goalItem;
 
     public GatherGoal(Player p, Item goalItem, int goalCount) {
@@ -14,9 +13,6 @@ public class GatherGoal extends Goal {
         return goalItem;
     }
 
-    public int getGoalCount() {
-        return goalCount;
-    }
 
 }
 

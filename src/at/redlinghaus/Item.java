@@ -28,5 +28,10 @@ public abstract class Item extends Interaction {
                 System.out.println("Invalid answer.");
         }
     }
+
+    @Override
+    public String toString() {
+        return description + "";
+    }
 }
 

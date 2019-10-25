@@ -81,7 +81,7 @@ public class DungeonMap {
     }
 
     public void connectMap() {
-        field1.connect(null, field2, field3, null);
+        field1.connect(null, field2, field3, entry);
         field2.connect(null, door1, field4, field1);
         field3.connect(field1, field4, field5, null);
         field4.connect(field2, null, field6, field3);

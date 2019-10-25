@@ -16,6 +16,9 @@ public class Printer {
         System.out.printf("East: %s%n", callFieldDescription(p.getCurrField().getEast()));
         System.out.printf("South: %s%n", callFieldDescription(p.getCurrField().getSouth()));
         System.out.printf("West: %s%n", callFieldDescription(p.getCurrField().getWest()));
+        System.out.println("-------------------------------------------------------");
+        printDirectionKeys();
+        printOtherKeys();
     }
 
     public void printField(Element el){
@@ -26,6 +29,28 @@ public class Printer {
         System.out.printf("East: %s%n", callFieldDescription(el.getEast()));
         System.out.printf("South: %s%n", callFieldDescription(el.getSouth()));
         System.out.printf("West: %s%n", callFieldDescription(el.getWest()));
+    }
+
+    public void printDirectionKeys(){
+        System.out.println("Directions - North: w - East: d - South: s - West: a");
+    }
+
+    public void printOtherKeys(){
+        System.out.println("Use item: u - Inventory: b - Exit: Q - Quest list: k");
+    }
+
+    public void printBackPack(Player p){
+        for (int i = 0; i < p.getBackPack().size(); i++) {
+            System.out.print(i + " - " + p.getBackPack().get(i) + " | ");
+            System.out.println();
+        }
+    }
+
+    public void printQuests(Player p){
+        for(Quest q : p.getQuestList()){
+            System.out.print(q + " | ");
+            System.out.println();
+        }
     }
 
     public void printElements(){

@@ -54,4 +54,9 @@ abstract public class Quest extends Interaction {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return description + " - " + isSolved;
+    }
 }

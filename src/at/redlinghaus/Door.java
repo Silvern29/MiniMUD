@@ -13,6 +13,10 @@ public class Door extends Element {
 
     @Override
     public String getDescription(){
+        if (oppositeField(firstNotNull()) == null) {
+            description = String.format("Entrance door");
+            return description;
+        }
         description = String.format("Door between field %d and field %d", oppositeField(firstNotNull()).getFieldNum(), firstNotNull().getFieldNum());
         return description;
     }
@@ -33,7 +37,11 @@ public class Door extends Element {
 
     @Override
     public void enter(Player p) {
-        p.setCurrField(this.oppositeField(p.getCurrField()));
+        if (isOpen){
+            p.setCurrField(this.oppositeField(p.getCurrField()));
+        } else {
+            System.out.println(">>> This door is locked! <<<");
+        }
     }
 
     @Override

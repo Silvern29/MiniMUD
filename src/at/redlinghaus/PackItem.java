@@ -25,4 +25,9 @@ public class PackItem {
         this.amount = amount;
     }
 
+    @Override
+    public String toString() {
+        return packedItem + ": " + amount;
+    }
+
 }

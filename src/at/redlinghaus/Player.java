@@ -14,19 +14,39 @@ public class Player {
         this.currField = currField;
     }
 
+    public void use(Item item, String direction){
+
+    }
+
     public void move(String direction) {
-        switch (direction.toLowerCase()) {
-            case "north":
-                currField.north.enter(this);
+        switch (direction) {
+            case "w":
+                if (currField.north == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.north.enter(this);
+                }
                 break;
-            case "east":
-                currField.east.enter(this);
+            case "d":
+                if (currField.east == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.east.enter(this);
+                }
                 break;
-            case "south":
-                currField.south.enter(this);
+            case "s":
+                if (currField.south == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.south.enter(this);
+                }
                 break;
-            case "west":
-                currField.west.enter(this);
+            case "a":
+                if (currField.west == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.west.enter(this);
+                }
                 break;
             default:
                 System.out.println("Please try again");
