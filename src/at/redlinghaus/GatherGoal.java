@@ -2,11 +2,10 @@ package at.redlinghaus;
 
 public class GatherGoal extends Goal {
 
+    private int goalCount;
     private PackItem goalItem;
-    private String task;
 
-    public GatherGoal (String task, Player p, Item goalItem, int goalCount) {
-        this.task = task;
+    public GatherGoal(Player p, Item goalItem, int goalCount) {
         this.goalItem = p.addBackPack(goalItem, 0);
         this.goalCount = goalCount;
     }
@@ -19,7 +18,6 @@ public class GatherGoal extends Goal {
         return goalCount;
     }
 
-
-    }
+}
 
 

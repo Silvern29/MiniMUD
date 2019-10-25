@@ -1,17 +1,14 @@
 package at.redlinghaus;
 
-import java.util.Scanner;
-
 public class Quest2 extends Quest {
 
-    private Player player;
-    private Item stone = new QuestItem("a not so ordinary stone");
-    private Scanner sc = new Scanner(System.in);
+    private Item stone;
 
-    public Quest2(Player player, DungeonMap map) {
-        this.player = player;
+    public Quest2(Player p, DungeonMap map) {
+        this.p = p;
         description = "## filler ##";
-        goal = new GatherGoal(player, stone, 5);
+        stone = map.stone;
+        goal = new GatherGoal(p, stone, 1);
         reward = map.key2;
     }
 
@@ -20,19 +17,16 @@ public class Quest2 extends Quest {
         this.isSolved = true;
     }
 
-    @Override
-    public void acceptQuest() {
-    }
 
     @Override
     public boolean isComplete() {
-        return player.isInPack(stone).getAmount() >= goal.goalCount;
+        return p.isInPack(stone).getAmount() >= goal.goalCount;
     }
 
     public void solveQuest() {
         System.out.println("You gathered all the required items. You have unlocked the key.");
         setSolved(true);
-        player.addBackPack(reward, 1);
-        player.removeBackPack(stone, goal.goalCount);
+        p.addBackPack(reward, 1);
+        p.removeBackPack(stone, goal.goalCount);
     }
 }

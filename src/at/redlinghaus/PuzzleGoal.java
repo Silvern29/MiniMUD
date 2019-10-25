@@ -4,10 +4,8 @@ public class PuzzleGoal extends Goal {
 
     private String answerString;
     private int answerInt;
-    private String task;
 
-    public PuzzleGoal (String task, String answerString) {
-        this.task = task;
+    public PuzzleGoal (String answerString) {
         this.answerString = answerString;
     }
 

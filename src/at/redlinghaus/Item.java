@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public abstract class Item extends Interaction {
 
-    Player p;
-    private Scanner sc = new Scanner(System.in);
+    protected Player p;
+    protected Scanner sc = new Scanner(System.in);
 
     public Item(String description) {
         super(description);
     }
-
 
     @Override
     public void handleInteraction(Player p, Field field) {

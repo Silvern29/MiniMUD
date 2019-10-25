@@ -9,11 +9,13 @@ public class DungeonMap {
     Field field1, field2, field3, field4, field5, field6, field7, field8, field9, field10, field11, field12, field13, field14, field15, field16, field17, field18, field19, field20, field21, field22, field23, field24;
     Door entry, door1, door2, door3;
     Key entryKey, key1, key2;
+    Item stone;
 
     public DungeonMap() {
         createMap();
         connectMap();
         createKeys();
+        createItems();
     }
 
     public Door createDoor(boolean isOpen, Key key) {
@@ -33,6 +35,11 @@ public class DungeonMap {
         key1 = new Key("123");
         field6.interactions.add(key1);
         key2 = new Key("789");
+    }
+
+    public void createItems(){
+        stone = new QuestItem("a not so ordinary stone");
+        field23.interactions.add(stone);
     }
 
     public void createMap() {

@@ -16,14 +16,13 @@ abstract public class Quest extends Interaction {
         return isSolved;
     }
 
-    abstract public void acceptQuest(); {
+    public void acceptQuest() {
         String inputPlayer = sc.nextLine();
         System.out.println("Do you want to accept this quest?\ny/n\n" + this.description);
         switch (inputPlayer.toLowerCase()) {
             case "y":
                 p.acceptQuest(this);
                 System.out.println("You have accepted this quest.");
-                System.out.println(this.goal.getTask());
                 if (isComplete()) {
                     this.solveQuest();
                 }
