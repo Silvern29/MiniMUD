@@ -8,10 +8,12 @@ public class DungeonMap {
 
     Field field1, field2, field3, field4, field5, field6, field7, field8, field9, field10, field11, field12, field13, field14, field15, field16, field17, field18, field19, field20, field21, field22, field23, field24;
     Door entry, door1, door2, door3;
+    Key entryKey, key1, key2;
 
     public DungeonMap() {
         createMap();
         connectMap();
+        createKeys();
     }
 
     public Door createDoor(boolean isOpen, Key key) {
@@ -27,29 +29,27 @@ public class DungeonMap {
     }
 
     public void createKeys() {
-        Key entryKey = new Key("456");
-        Key key1 = new Key("123");
-        Key key2 = new Key("789");
-    }
-
-    public void createQuests() {
+        entryKey = new Key("456");
+        key1 = new Key("123");
+        field6.interactions.add(key1);
+        key2 = new Key("789");
     }
 
     public void createMap() {
-        entry = createDoor(false, new Key("456"));
+        entry = createDoor(false, entryKey);
         field1 = createField("Entrance");
         field2 = createField("Entrance");
         field3 = createField("Entrance");
         field4 = createField("Entrance");
         field5 = createField("Entrance");
         field6 = createField("Entrance");
-        door1 = createDoor(false, new Key("123"));
+        door1 = createDoor(false, key1);
 
 
         field7 = createField("Hallway");
         field8 = createField("Hallway");
         field9 = createField("Hallway");
-        door2 = createDoor(false, new Key("789"));
+        door2 = createDoor(false, key2);
 
         field10 = createField("Room");
         field11 = createField("Room");

@@ -7,13 +7,13 @@ public class Quest1 extends Quest {
     private Player player;
     private Scanner sc = new Scanner(System.in);
 
-    public Quest1(Player player) {
+    public Quest1(Player player, DungeonMap map) {
         this.player = player;
         description = "This door is locked. It requires a key, which is being kept in this box. " +
                 "To open the box you must solve the following riddle:\n\nWhat has a head and a tail, but no body?\n\n" +
                 "You have 3 tries.";
         goal = new PuzzleGoal("coin");
-        reward = new Key("123");
+        reward = map.entryKey;
     }
 
     @Override

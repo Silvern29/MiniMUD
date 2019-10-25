@@ -6,14 +6,13 @@ public class Quest2 extends Quest {
 
     private Player player;
     private Item stone = new QuestItem("a not so ordinary stone");
-    private Key key = new Key("456");
     private Scanner sc = new Scanner(System.in);
 
-    public Quest2(Player player) {
+    public Quest2(Player player, DungeonMap map) {
         this.player = player;
         description = "## filler ##";
         goal = new GatherGoal(player, stone, 5);
-        reward = key;
+        reward = map.key2;
     }
 
     @Override
@@ -51,7 +50,7 @@ public class Quest2 extends Quest {
     public void solveQuest() {
         System.out.println("You gathered all the required items. You have unlocked the key.");
         setSolved(true);
-        player.addBackPack(key, 1);
+        player.addBackPack(reward, 1);
         player.removeBackPack(stone, goal.goalCount);
     }
 }
