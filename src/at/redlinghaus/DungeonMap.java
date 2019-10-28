@@ -6,7 +6,7 @@ import java.util.List;
 public class DungeonMap {
     List<Element> listOfElements = new LinkedList<>();
 
-    Field field1, field2, field3, field4, field5, field6, field7, field8, field9, field10, field11, field12, field13, field14, field15, field16, field17, field18, field19, field20, field21, field22, field23, field24;
+    Field field0, field1, field2, field3, field4, field5, field6, field7, field8, field9, field10, field11, field12, field13, field14, field15, field16, field17, field18, field19, field20, field21, field22, field23, field24;
     Door entry, door1, door2, door3;
     Key entryKey, key1, key2;
     Item stone;
@@ -49,6 +49,7 @@ public class DungeonMap {
     }
 
     public void createFields(){
+        field0 = createField("Finale Field");
         field1 = createField("Entrance");
         field2 = createField("Entrance");
         field3 = createField("Entrance");
@@ -76,6 +77,7 @@ public class DungeonMap {
     }
 
     public void connectMap() {
+        field0.connect(null,entry, null,null);
         field1.connect(null, field2, field3, entry);
         field2.connect(null, door1, field4, field1);
         field3.connect(field1, field4, field5, null);

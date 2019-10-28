@@ -17,9 +17,15 @@ public class Game {
         playing = true;
         Player player1 = new Player("Dummy", dung.field1);
         setQuests(player1);
+        System.out.println("Try to find the key and escape the dungeon!");
         myPrint.printCurrField(player1);
         while (playing) {
-            turn(player1);
+            if (player1.getCurrField() == dung.field0){
+                System.out.println("\nCongratulations. You escaped the dungeon.");
+                playing = false;
+            } else {
+                turn(player1);
+            }
         }
 //        myPrint.printElements();
     }
