@@ -6,7 +6,7 @@ public class Quest2 extends Quest {
 
     public Quest2(Player p, DungeonMap map) {
         this.p = p;
-        description = "Please gather the not so ordinary stone.";
+        description = "Please gather the not so ordinary stone to unlock the key.";
         stone = map.stone;
         goal = new GatherGoal(p, stone, 1);
         reward = map.key2;
@@ -24,7 +24,7 @@ public class Quest2 extends Quest {
     }
 
     public void solveQuest() {
-        System.out.println("You gathered all the required items. You have unlocked the key.");
+        System.out.println("\nYou gathered all the required items. You have unlocked the key.\n");
         setSolved(true);
         p.addBackPack(reward, 1);
         p.removeBackPack(stone, goal.goalCount);

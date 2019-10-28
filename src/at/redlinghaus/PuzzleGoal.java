@@ -21,5 +21,4 @@ public class PuzzleGoal extends Goal {
         return answerInt;
     }
 
-
 }

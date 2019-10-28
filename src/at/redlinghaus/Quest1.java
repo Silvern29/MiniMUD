@@ -16,7 +16,7 @@ public class Quest1 extends Quest {
     public void solveQuest() {
         for (int triesLeft = 3; triesLeft > 0; triesLeft--) {
             if (sc.nextLine().equalsIgnoreCase(((PuzzleGoal) goal).getAnswerString())) {
-                System.out.println("Congratulations. Your answer is correct. The box opens and you receive " + reward + ".");
+                System.out.println("\nCongratulations. Your answer is correct. The box opens and you receive " + reward + ".\n");
                 setSolved(true);
                 p.addBackPack(reward, 1);
             } else {

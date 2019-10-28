@@ -51,6 +51,7 @@ public class Door extends Element {
         } else {
             if (item == key) {
                 isOpen = true;
+                System.out.println("Door unlocked.");
             } else {
                 System.out.println("The key does not match. Find the right one!");
             }
