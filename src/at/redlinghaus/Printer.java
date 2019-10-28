@@ -24,6 +24,7 @@ public class Printer {
     public void printField(Element el){
         System.out.println("-------------------------------------------------------");
         System.out.printf("%s%n", callFieldDescription(el));
+        System.out.printf("Quest/Items: %s%n%n", printInteractions(el));
 
         System.out.printf("North: %s%n", callFieldDescription(el.getNorth()));
         System.out.printf("East: %s%n", callFieldDescription(el.getEast()));

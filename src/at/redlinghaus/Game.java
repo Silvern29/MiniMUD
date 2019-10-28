@@ -29,7 +29,7 @@ public class Game {
         dung.field11.addInteractions(quest1);
 
         Interaction quest2 = new Quest2(player, dung);
-        dung.field16.addInteractions(quest1);
+        dung.field16.addInteractions(quest2);
 
     }
 
@@ -69,10 +69,11 @@ public class Game {
                     validIndex = player.getBackPack().get(index) != null;
                 }
 
+                System.out.println("Please choose a direction to use the item: ");
                 String direction = "";
                 while (!validDirection) {
                     direction = sc.nextLine();
-                    validDirection = direction == "w" || direction == "a" ||direction == "s" ||direction == "d";
+                    validDirection = direction.equals("w") || direction.equals("a") || direction.equals("s") || direction.equals("d");
                 }
 
                 player.use(player.getBackPack().get(index).getPackedItem(), direction);
