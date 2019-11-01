@@ -13,19 +13,13 @@ public class Quest2 extends Quest {
     }
 
     @Override
-    public void setSolved(boolean isSolved) {
-        this.isSolved = true;
-    }
-
-
-    @Override
     public boolean isComplete() {
         return p.isInPack(stone).getAmount() >= goal.goalCount;
     }
 
     public void solveQuest() {
         System.out.println("\nYou gathered all the required items. You have unlocked the key.\n");
-        setSolved(true);
+        setSolved();
         p.addBackPack(reward, 1);
         p.removeBackPack(stone, goal.goalCount);
     }

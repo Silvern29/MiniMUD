@@ -10,7 +10,9 @@ abstract public class Quest extends Interaction {
     protected Scanner sc = new Scanner(System.in);
     protected Player p;
 
-    abstract public void setSolved(boolean isSolved);
+    public void setSolved() {
+        this.isSolved = true;
+    }
 
     public boolean isSolved() {
         return isSolved;
@@ -56,6 +58,6 @@ abstract public class Quest extends Interaction {
 
     @Override
     public String toString() {
-        return description + " - is solved: " + isSolved;
+        return "Quest: " + description + " - is solved: " + isSolved;
     }
 }

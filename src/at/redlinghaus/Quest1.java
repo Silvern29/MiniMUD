@@ -14,13 +14,17 @@ public class Quest1 extends Quest {
 
 
     public void solveQuest() {
-        for (int triesLeft = 3; triesLeft > 0; triesLeft--) {
+        for (int tries = 3; tries > 0; tries--) {
             if (sc.nextLine().equalsIgnoreCase(((PuzzleGoal) goal).getAnswerString())) {
                 System.out.println("\nCongratulations. Your answer is correct. The box opens and you receive " + reward + ".\n");
-                setSolved(true);
+                setSolved();
                 p.addBackPack(reward, 1);
+                tries = 0;
             } else {
-                System.out.println("Wrong answer. You have " + triesLeft + " left.");
+                System.out.println("Wrong answer. You have " + (tries - 1) + " tries left.");
+                if (tries == 1) {
+                    p.removeQuestList(this);
+                }
             }
         }
     }
@@ -30,14 +34,8 @@ public class Quest1 extends Quest {
         return true;
     }
 
-    @Override
-    public void setSolved(boolean isSolved) {
-        this.isSolved = true;
-    }
-
-    @Override
+/*    @Override
     public String toString() {
         return "Quest: " + description;
-    }
-
+    }*/
 }
