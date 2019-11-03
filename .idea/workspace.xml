@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/GatherGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/GatherGoal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Goal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Goal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Door.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/DungeonMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/DungeonMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/PuzzleGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/PuzzleGoal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Quest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Quest1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Quest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Quest2.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +94,10 @@
       <workItem from="1571926267016" duration="2586000" />
       <workItem from="1571939767326" duration="1211000" />
       <workItem from="1571942157892" duration="915000" />
-      <workItem from="1572002884528" duration="4569000" />
+      <workItem from="1572002884528" duration="4745000" />
+      <workItem from="1572207359399" duration="8182000" />
+      <workItem from="1572288445807" duration="4573000" />
+      <workItem from="1572813537328" duration="2327000" />
     </task>
     <task id="LOCAL-00001" summary="edit Quest">
       <created>1571835615723</created>
@@ -107,7 +113,28 @@
       <option name="project" value="LOCAL" />
       <updated>1572005414807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="edited Quest etc">
+      <created>1572009567150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572009567150</updated>
+    </task>
+    <task id="LOCAL-00004" summary="edited Quest etc">
+      <created>1572221350014</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572221350014</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added Game end &amp; debugged missing item in Puzzlegoal">
+      <created>1572300641778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572300641778</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +156,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit Quest" />
     <MESSAGE value="edited use()" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited use()" />
+    <MESSAGE value="edited Quest etc" />
+    <MESSAGE value="added Game end &amp; debugged missing item in Puzzlegoal" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Game end &amp; debugged missing item in Puzzlegoal" />
   </component>
 </project>

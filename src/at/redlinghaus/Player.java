@@ -14,7 +14,7 @@ public class Player {
         this.currField = currField;
     }
 
-    public void use(Item item, String direction){
+    public void use(Item item, String direction) {
         switch (direction) {
             case "w":
                 if (currField.north == null) {
@@ -86,7 +86,7 @@ public class Player {
 
     public void acceptQuest(Quest quest) {
         addQuestList(quest);
-        if(quest.getGoal() instanceof GatherGoal) {
+        if (quest.getGoal() instanceof GatherGoal) {
             quest.goal.goalItem = addBackPack(quest.getGoal().goalItem.getPackedItem(), 0);
         }
     }
@@ -139,7 +139,7 @@ public class Player {
         return tmp;
     }
 
-    public void removeBackPack (Item item, int amount) {
+    public void removeBackPack(Item item, int amount) {
         PackItem tmp = isInPack(item);
         if (tmp != null && tmp.getAmount() > amount) {
             tmp.setAmount(tmp.getAmount() - amount);

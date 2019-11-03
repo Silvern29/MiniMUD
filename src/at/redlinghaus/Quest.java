@@ -19,7 +19,7 @@ abstract public class Quest extends Interaction {
     }
 
     public void acceptQuest() {
-        System.out.println("You have come across a quest:\n" +this.description + "\nDo you want to accept this quest?\ny/n");
+        System.out.println("You have come across a quest:\n" + this.description + "\nDo you want to accept this quest?\ny/n");
         String inputPlayer = sc.nextLine();
         switch (inputPlayer.toLowerCase()) {
             case "y":

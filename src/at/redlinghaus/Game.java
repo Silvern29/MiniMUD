@@ -8,19 +8,19 @@ public class Game {
     boolean playing;
     Scanner sc = new Scanner(System.in);
 
-    public Game(){
+    public Game() {
         dung = new DungeonMap();
         myPrint = new Printer(this);
     }
 
-    public void playGame () {
+    public void playGame() {
         playing = true;
         Player player1 = new Player("Dummy", dung.field1);
         setQuests(player1);
         System.out.println("Try to find the key and escape the dungeon!");
         myPrint.printCurrField(player1);
         while (playing) {
-            if (player1.getCurrField() == dung.field0){
+            if (player1.getCurrField() == dung.field0) {
                 System.out.println("\nCongratulations. You escaped the dungeon.");
                 playing = false;
             } else {
@@ -30,7 +30,7 @@ public class Game {
 //        myPrint.printElements();
     }
 
-    public void setQuests(Player player){
+    public void setQuests(Player player) {
         Interaction quest1 = new Quest1(player, dung); //create as Quest??
         dung.field11.addInteractions(quest1);
 
@@ -39,17 +39,17 @@ public class Game {
 
     }
 
-    public void turn(Player player){
+    public void turn(Player player) {
         int oldField = player.getCurrField().getFieldNum();
-        System.out.print("Enter the direction you want to go: ");
+        System.out.print("Enter the command: ");
         boolean validInput = false;
         String input = "";
-        while(!validInput){
+        while (!validInput) {
             input = sc.nextLine().toLowerCase();
             validInput = input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d") || input.equals("u") || input.equals("k") || input.equals("b") || input.equals("q");
         }
 
-        if (input.equals("w") || input.equals("a") ||input.equals("s") ||input.equals("d")) {
+        if (input.equals("w") || input.equals("a") || input.equals("s") || input.equals("d")) {
             player.move(input);
         } else if (input.equals("b")) {
             if (player.getBackPack().size() == 0) {
@@ -59,7 +59,7 @@ public class Game {
             }
         } else if (input.equals("k")) {
             myPrint.printQuests(player);
-        } else if(input.equals("u")){
+        } else if (input.equals("u")) {
             if (player.getBackPack().size() == 0) {
                 System.out.println("You do not have anything to use!");
             } else {
@@ -89,16 +89,10 @@ public class Game {
             System.exit(0);
         }
 
-        if (player.getCurrField().getFieldNum() != oldField){
+        if (player.getCurrField().getFieldNum() != oldField) {
             myPrint.printCurrField(player);
         }
     }
-
-
-
-
-
-
 
 
 }

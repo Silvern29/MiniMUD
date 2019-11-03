@@ -4,31 +4,32 @@ import java.util.LinkedList;
 import java.util.List;
 
 abstract public class Element {
+    protected List<Interaction> interactions = new LinkedList<>();
     Element north, east, south, west;
     String description;
-    protected List<Interaction> interactions = new LinkedList<>();
 
 
-    public Element(){
+    public Element() {
     }
 
-    public Element(Element north, Element east, Element south, Element west){
+    public Element(Element north, Element east, Element south, Element west) {
         this.north = north;
         this.east = east;
         this.south = south;
         this.west = west;
     }
 
-    public Element firstNotNull(){
-        if (this.north != null){
+    public Element firstNotNull() {
+        if (this.north != null) {
             return north;
-        } else if(this.east != null){
+        } else if (this.east != null) {
             return east;
-        } else if(this.south != null){
+        } else if (this.south != null) {
             return south;
-        } else if (this.west != null){
+        } else if (this.west != null) {
             return west;
-        } return null;
+        }
+        return null;
     }
 
     /*public void connect() {
@@ -45,62 +46,63 @@ abstract public class Element {
         }
     }
 */
-    public String getDescription(){
+    public String getDescription() {
         return description;
     }
 
-    public String getDescription(Element el){
+    public String getDescription(Element el) {
         return description;
     }
 
-    public Element oppositeField(Element currField){
-        if(currField.equals(north)){
+    public Element oppositeField(Element currField) {
+        if (currField.equals(north)) {
             return south;
-        } else if(currField.equals(east)){
+        } else if (currField.equals(east)) {
             return west;
-        } else if(currField.equals(south)){
+        } else if (currField.equals(south)) {
             return north;
         } else {
             return east;
         }
     }
 
-    public void connect(Element north, Element east, Element south, Element west){
+    public void connect(Element north, Element east, Element south, Element west) {
         this.addNorth(north);
         this.addEast(east);
         this.addSouth(south);
         this.addWest(west);
     }
 
-    public void addNorth(Element north){
+    public void addNorth(Element north) {
         this.north = north;
-        if (north != null){
+        if (north != null) {
             north.south = this;
         }
     }
 
-    public void addEast(Element east){
+    public void addEast(Element east) {
         this.east = east;
-        if (east != null){
+        if (east != null) {
             east.setWest(this);
         }
     }
 
-    public void addSouth(Element south){
+    public void addSouth(Element south) {
         this.south = south;
-        if (south != null){
+        if (south != null) {
             south.north = this;
         }
     }
 
-    public void addWest(Element west){
+    public void addWest(Element west) {
         this.west = west;
-        if (west != null){
+        if (west != null) {
             west.east = this;
         }
     }
 
-    abstract public void enter(Player p );
+    abstract public void enter(Player p);
+
     abstract public void enter(Player p, Item item);
 
     public Element getNorth() {
