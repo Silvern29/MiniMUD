@@ -58,9 +58,13 @@ public class Game {
                 System.out.println("Please choose an item: ");
                 myPrint.printBackPack(player);
                 while (!validIndex) {
-                    index = sc.nextInt();
+                    try {
+                        index = sc.nextInt();
+                        validIndex = player.getBackPack().get(index) != null;
+                    } catch(Exception e) {
+                        System.out.println("Please only integers!");
+                    }
                     sc.nextLine();
-                    validIndex = player.getBackPack().get(index) != null;
                 }
                 player.use();
             }
