@@ -1,47 +1,30 @@
 package at.redlinghaus;
 
-import java.util.Scanner;
-
 public class Quest1 extends Quest {
 
-    private Player player;
-    private Scanner sc = new Scanner(System.in);
-
-    public Quest1(Player player) {
-        this.player = player;
+    public Quest1(Player p, DungeonMap map) {
+        this.p = p;
         description = "This door is locked. It requires a key, which is being kept in this box. " +
                 "To open the box you must solve the following riddle:\n\nWhat has a head and a tail, but no body?\n\n" +
                 "You have 3 tries.";
         goal = new PuzzleGoal("coin");
-        reward = new Key("123");
-    }
-
-    @Override
-    public void acceptQuest() {
-        String inputPlayer = sc.nextLine();
-        System.out.println("Do you want to accept this quest?\ny/n");
-        switch (inputPlayer.toLowerCase()) {
-            case "y":
-                player.acceptQuest(this);
-                System.out.println("You have accepted this quest. Enter your guess below.");
-                this.solveQuest();
-                break;
-            case "n":
-                System.out.println("You have denied the quest.");
-                break;
-            default:
-                System.out.println("Invalid answer.");
-        }
+        reward = map.entryKey;
     }
 
     public void solveQuest() {
-        for (int triesLeft = 3; triesLeft > 0; triesLeft--) {
+        for (int tries = 3; tries > 0; tries--) {
             if (sc.nextLine().equalsIgnoreCase(((PuzzleGoal) goal).getAnswerString())) {
-                System.out.println("Congratulations. Your answer is correct. The box opens and you receive the key " + reward.getDescription() + ".");
-                setSolved(true);
-                player.addBackPack(reward, 1);
+                System.out.println("\nCongratulations. Your answer is correct. The box opens and you receive " + reward + ".\n");
+                setSolved();
+                p.addBackPack(reward, 1);
+                tries = 0;
             } else {
-                System.out.println("Wrong answer. You have " + triesLeft + " left.");
+                System.out.println("Wrong answer. You have " + (tries - 1) + " tries left.");
+                if (tries == 1) {
+                    p.removeQuestList(this);
+                    setTimeRequired();
+                    System.out.println("\nThis quest is now unavailable. Come back later to try again.\n");
+                }
             }
         }
     }
@@ -51,18 +34,8 @@ public class Quest1 extends Quest {
         return true;
     }
 
-    @Override
-    public void setSolved(boolean isSolved) {
-        this.isSolved = true;
-    }
-
-    @Override
+/*    @Override
     public String toString() {
-        return "Quest1{" +
-                "goal=" + goal +
-                ", reward=" + reward +
-                ", isSolved=" + isSolved +
-                '}';
-    }
-
+        return "Quest: " + description;
+    }*/
 }

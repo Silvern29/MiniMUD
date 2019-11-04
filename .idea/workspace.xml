@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Consumable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Consumable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Interaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Quest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/at/redlinghaus/Stone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/at/redlinghaus/Stone.java" afterDir="false" />
-    </list>
+    <list default="true" id="40a88c85-b889-47a3-80e3-6cedc48874f2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +25,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Logbuch/IntelliJ/test/src/at/fabiansinz/Main.java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,6 +81,8 @@
       <workItem from="1571766146621" duration="3964000" />
       <workItem from="1571926267016" duration="2586000" />
       <workItem from="1571939767326" duration="1211000" />
+      <workItem from="1571942157892" duration="915000" />
+      <workItem from="1572002884528" duration="4569000" />
     </task>
     <task id="LOCAL-00001" summary="edit Quest">
       <created>1571835615723</created>
@@ -96,7 +91,35 @@
       <option name="project" value="LOCAL" />
       <updated>1571835615723</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="edited use()">
+      <created>1572005414807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572005414807</updated>
+    </task>
+    <task id="LOCAL-00003" summary="edit">
+      <created>1572288712980</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572288712982</updated>
+    </task>
+    <task id="LOCAL-00004" summary="edit Quest/solveQuest in Quest1">
+      <created>1572617907374</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572617907375</updated>
+    </task>
+    <task id="LOCAL-00005" summary="edit time out in quest">
+      <created>1572853840022</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572853840022</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +140,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit Quest" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit Quest" />
+    <MESSAGE value="edited use()" />
+    <MESSAGE value="edit" />
+    <MESSAGE value="edit Quest/solveQuest in Quest1" />
+    <MESSAGE value="edit time out in quest" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit time out in quest" />
   </component>
 </project>

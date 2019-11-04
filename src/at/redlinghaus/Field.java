@@ -1,10 +1,9 @@
 package at.redlinghaus;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class Field extends Element {
-    public static int nextFieldNum = 1;
+    public static int nextFieldNum = 0;
     private int fieldNum;
     private String description;
 
@@ -51,20 +50,15 @@ public class Field extends Element {
         p.setCurrField(this);
         if (interactions.size() > 0) {
             for (Interaction el : interactions) {
-                el.handleInteraction(p);
+                el.handleInteraction(p, this);
             }
         }
     }
 
-    public void checkQuestStatus (Quest quest, Player p) {
-        if (!p.isInQuestList(quest)) {
-            quest.acceptQuest();
-        } else if (p.isInQuestList(quest) && !quest.isSolved) {
-            if (quest.isComplete()) {
-                quest.solveQuest();
-            }
-        }
+    @Override
+    public void enter(Player p, Item item) {
     }
+
 
     @Override
     public String toString() {

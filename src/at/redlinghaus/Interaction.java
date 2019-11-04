@@ -3,7 +3,8 @@ package at.redlinghaus;
 abstract public class Interaction {
     protected String description;
 
-    public Interaction(){}
+    public Interaction() {
+    }
 
     public Interaction(String description) {
         this.description = description;
@@ -13,5 +14,5 @@ abstract public class Interaction {
         return description;
     }
 
-    abstract public void handleInteraction (Player player);
+    abstract public void handleInteraction(Player player, Field field);
 }

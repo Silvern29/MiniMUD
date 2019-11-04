@@ -5,11 +5,11 @@ public class PuzzleGoal extends Goal {
     private String answerString;
     private int answerInt;
 
-    public PuzzleGoal (String answerString) {
+    public PuzzleGoal(String answerString) {
         this.answerString = answerString;
     }
 
-    public PuzzleGoal (int answerInt) {
+    public PuzzleGoal(int answerInt) {
         this.answerInt = answerInt;
     }
 
@@ -20,4 +20,5 @@ public class PuzzleGoal extends Goal {
     public int getAnswerInt() {
         return answerInt;
     }
+
 }

@@ -6,16 +6,21 @@ import java.util.List;
 public class DungeonMap {
     List<Element> listOfElements = new LinkedList<>();
 
-    Field field1, field2, field3, field4, field5, field6, field7, field8, field9, field10, field11, field12, field13, field14, field15, field16, field17, field18, field19, field20, field21, field22, field23, field24;
+    Field field0, field1, field2, field3, field4, field5, field6, field7, field8, field9, field10, field11, field12, field13, field14, field15, field16, field17, field18, field19, field20, field21, field22, field23, field24;
     Door entry, door1, door2, door3;
+    Key entryKey, key1, key2;
+    Item stone;
 
     public DungeonMap() {
-        createMap();
+        createKeys();
+        createFields();
+        createDoors();
+        createItems();
         connectMap();
     }
 
     public Door createDoor(boolean isOpen, Key key) {
-        Door tmp = new Door(isOpen, new Key("1234"));
+        Door tmp = new Door(isOpen, key);
         listOfElements.add(tmp);
         return tmp;
     }
@@ -27,46 +32,44 @@ public class DungeonMap {
     }
 
     public void createKeys() {
-        Key entryKey = new Key("456");
-        Key key1 = new Key("123");
-        Key key2 = new Key("789");
+        entryKey = new Key("456");
+        key1 = new Key("123");
+        key2 = new Key("789");
     }
 
-    public void createQuests() {
+    public void createItems() {
+        stone = new QuestItem("a not so ordinary stone");
     }
 
-    public void createMap() {
-        entry = createDoor(false, new Key("456"));
+    public void createDoors() {
+        entry = createDoor(false, entryKey);
+        door1 = createDoor(false, key1);
+        door2 = createDoor(false, key2);
+        door3 = createDoor(true, null);
+    }
+
+    public void createFields() {
+        field0 = createField("Final Field");
         field1 = createField("Entrance");
         field2 = createField("Entrance");
         field3 = createField("Entrance");
         field4 = createField("Entrance");
         field5 = createField("Entrance");
         field6 = createField("Entrance");
-        door1 = createDoor(false, new Key("123"));
-
-
         field7 = createField("Hallway");
         field8 = createField("Hallway");
         field9 = createField("Hallway");
-        door2 = createDoor(false, new Key("789"));
-
         field10 = createField("Room");
         field11 = createField("Room");
-
         field12 = createField("Hallway");
         field13 = createField("Hallway");
         field14 = createField("Hallway");
-        door3 = createDoor(true, null);
-
         field15 = createField("Patio");
         field16 = createField("Patio");
         field17 = createField("Patio");
         field18 = createField("Patio");
-
         field19 = createField("Hallway");
         field20 = createField("Hallway");
-
         field21 = createField("Hall");
         field22 = createField("Hall");
         field23 = createField("Hall");
@@ -74,7 +77,8 @@ public class DungeonMap {
     }
 
     public void connectMap() {
-        field1.connect(null, field2, field3, null);
+        field0.connect(null, entry, null, null);
+        field1.connect(null, field2, field3, entry);
         field2.connect(null, door1, field4, field1);
         field3.connect(field1, field4, field5, null);
         field4.connect(field2, null, field6, field3);
@@ -90,7 +94,7 @@ public class DungeonMap {
 
         field12.connect(field9, null, field13, null);
         field13.connect(field12, null, field14, null);
-        field14.connect(field13, door3, field13, null);
+        field14.connect(field13, door3, field19, null);
 
         field15.connect(null, field16, field17, door3);
         field16.connect(null, null, field18, field15);
@@ -104,5 +108,7 @@ public class DungeonMap {
         field22.connect(field20, null, field24, field21);
         field23.connect(field21, field24, null, null);
         field24.connect(field22, null, null, field23);
+        field6.interactions.add(key1);
+        field23.interactions.add(stone);
     }
 }

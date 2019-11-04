@@ -14,31 +14,81 @@ public class Player {
         this.currField = currField;
     }
 
-    public void move(String direction) {
-        switch (direction.toLowerCase()) {
-            case "north":
-                currField.north.enter(this);
+    public void use(Item item, String direction) {
+        switch (direction) {
+            case "w":
+                if (currField.north == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.north.enter(this, item);
+                }
                 break;
-            case "east":
-                currField.east.enter(this);
+            case "d":
+                if (currField.east == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.east.enter(this, item);
+                }
                 break;
-            case "south":
-                currField.south.enter(this);
+            case "s":
+                if (currField.south == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.south.enter(this, item);
+                }
                 break;
-            case "west":
-                currField.west.enter(this);
+            case "a":
+                if (currField.west == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.west.enter(this, item);
+                }
                 break;
             default:
                 System.out.println("Please try again");
         }
     }
 
-    public void use() {
-
+    public void move(String direction) {
+        switch (direction) {
+            case "w":
+                if (currField.north == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.north.enter(this);
+                }
+                break;
+            case "d":
+                if (currField.east == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.east.enter(this);
+                }
+                break;
+            case "s":
+                if (currField.south == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.south.enter(this);
+                }
+                break;
+            case "a":
+                if (currField.west == null) {
+                    System.out.println(">>> Ouch! This is a wall! <<<");
+                } else {
+                    currField.west.enter(this);
+                }
+                break;
+            default:
+                System.out.println("Please try again");
+        }
     }
 
     public void acceptQuest(Quest quest) {
         addQuestList(quest);
+        if (quest.getGoal() instanceof GatherGoal) {
+            quest.goal.goalItem = addBackPack(quest.getGoal().goalItem.getPackedItem(), 0);
+        }
     }
 
     public String getName() {
@@ -89,7 +139,7 @@ public class Player {
         return tmp;
     }
 
-    public void removeBackPack (Item item, int amount) {
+    public void removeBackPack(Item item, int amount) {
         PackItem tmp = isInPack(item);
         if (tmp != null && tmp.getAmount() > amount) {
             tmp.setAmount(tmp.getAmount() - amount);
