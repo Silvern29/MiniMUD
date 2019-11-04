@@ -2,7 +2,6 @@ package at.redlinghaus;
 
 public class Quest1 extends Quest {
 
-
     public Quest1(Player p, DungeonMap map) {
         this.p = p;
         description = "This door is locked. It requires a key, which is being kept in this box. " +
@@ -11,7 +10,6 @@ public class Quest1 extends Quest {
         goal = new PuzzleGoal("coin");
         reward = map.entryKey;
     }
-
 
     public void solveQuest() {
         for (int tries = 3; tries > 0; tries--) {
@@ -24,6 +22,8 @@ public class Quest1 extends Quest {
                 System.out.println("Wrong answer. You have " + (tries - 1) + " tries left.");
                 if (tries == 1) {
                     p.removeQuestList(this);
+                    setTimeRequired();
+                    System.out.println("\nThis quest is now unavailable. Come back later to try again.\n");
                 }
             }
         }
