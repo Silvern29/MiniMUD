@@ -6,17 +6,11 @@ public class Quest2 extends Quest {
 
     public Quest2(Player p, DungeonMap map) {
         this.p = p;
-        description = "## filler ##";
+        description = "Please gather the not so ordinary stone to unlock the key.";
         stone = map.stone;
         goal = new GatherGoal(p, stone, 1);
         reward = map.key2;
     }
-
-    @Override
-    public void setSolved(boolean isSolved) {
-        this.isSolved = true;
-    }
-
 
     @Override
     public boolean isComplete() {
@@ -24,8 +18,8 @@ public class Quest2 extends Quest {
     }
 
     public void solveQuest() {
-        System.out.println("You gathered all the required items. You have unlocked the key.");
-        setSolved(true);
+        System.out.println("\nYou gathered all the required items. You have unlocked the key.\n");
+        setSolved();
         p.addBackPack(reward, 1);
         p.removeBackPack(stone, goal.goalCount);
     }

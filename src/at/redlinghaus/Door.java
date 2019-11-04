@@ -5,14 +5,14 @@ public class Door extends Element {
     private String description;
     private Key key;
 
-    public Door(boolean isOpen, Key key){
+    public Door(boolean isOpen, Key key) {
         super();
         this.isOpen = isOpen;
         this.key = key;
     }
 
     @Override
-    public String getDescription(){
+    public String getDescription() {
         if (oppositeField(firstNotNull()) == null) {
             description = String.format("Entrance door");
             return description;
@@ -37,10 +37,24 @@ public class Door extends Element {
 
     @Override
     public void enter(Player p) {
-        if (isOpen){
+        if (isOpen) {
             p.setCurrField(this.oppositeField(p.getCurrField()));
         } else {
             System.out.println(">>> This door is locked! <<<");
+        }
+    }
+
+    @Override
+    public void enter(Player p, Item item) {
+        if (isOpen) {
+            System.out.println(">>> This door is already unlocked! <<<");
+        } else {
+            if (item == key) {
+                isOpen = true;
+                System.out.println("Door unlocked.");
+            } else {
+                System.out.println("The key does not match. Find the right one!");
+            }
         }
     }
 

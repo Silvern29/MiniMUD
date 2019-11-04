@@ -10,15 +10,17 @@ abstract public class Quest extends Interaction {
     protected Scanner sc = new Scanner(System.in);
     protected Player p;
 
-    abstract public void setSolved(boolean isSolved);
+    public void setSolved() {
+        this.isSolved = true;
+    }
 
     public boolean isSolved() {
         return isSolved;
     }
 
     public void acceptQuest() {
+        System.out.println("You have come across a quest:\n" + this.description + "\nDo you want to accept this quest?\ny/n");
         String inputPlayer = sc.nextLine();
-        System.out.println("Do you want to accept this quest?\ny/n\n" + this.description);
         switch (inputPlayer.toLowerCase()) {
             case "y":
                 p.acceptQuest(this);
@@ -34,7 +36,6 @@ abstract public class Quest extends Interaction {
                 System.out.println("Invalid answer.");
         }
     }
-
 
     abstract public void solveQuest();
 
@@ -57,6 +58,6 @@ abstract public class Quest extends Interaction {
 
     @Override
     public String toString() {
-        return description + " - " + isSolved;
+        return "Quest: " + description + " - is solved: " + isSolved;
     }
 }
