@@ -1,10 +1,9 @@
 package at.redlinghaus;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class Field extends Element {
-    public static int nextFieldNum = 1;
+    public static int nextFieldNum = 0;
     private int fieldNum;
     private String description;
 

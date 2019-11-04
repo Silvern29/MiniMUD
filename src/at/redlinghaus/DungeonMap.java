@@ -37,19 +37,19 @@ public class DungeonMap {
         key2 = new Key("789");
     }
 
-    public void createItems(){
+    public void createItems() {
         stone = new QuestItem("a not so ordinary stone");
     }
 
-    public void createDoors(){
+    public void createDoors() {
         entry = createDoor(false, entryKey);
         door1 = createDoor(false, key1);
         door2 = createDoor(false, key2);
         door3 = createDoor(true, null);
     }
 
-    public void createFields(){
-        field0 = createField("Finale Field");
+    public void createFields() {
+        field0 = createField("Final Field");
         field1 = createField("Entrance");
         field2 = createField("Entrance");
         field3 = createField("Entrance");
@@ -77,7 +77,7 @@ public class DungeonMap {
     }
 
     public void connectMap() {
-        field0.connect(null,entry, null,null);
+        field0.connect(null, entry, null, null);
         field1.connect(null, field2, field3, entry);
         field2.connect(null, door1, field4, field1);
         field3.connect(field1, field4, field5, null);
